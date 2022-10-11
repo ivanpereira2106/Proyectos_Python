@@ -1,10 +1,12 @@
 import time
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome(r'C:\Users\ivan.pereira\Documents\Python_Proyects\Selenium\chromedriver')  # Optional argument, if not specified will search path.
+driver = webdriver.Chrome(r'C:\Proyectos_Python\Selenium\chromedriver')  # Optional argument, if not specified will search path.
 
-driver.get('https://web.whatsapp.com/');
+driver.get('https://www.google.com/');
 
 time.sleep(5) # Let the user actually see something!
 
@@ -15,9 +17,18 @@ time.sleep(5) # Let the user actually see something!
 #search_box.submit()
 
 
-driver.find_element_by_xpath('//*[@id="pane-side"]/div[1]/div/div/div[10]/div/div/div[2]').click()
-driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[1]/div/div[2]').send_keys('Hola Carlitos')
-driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]/button/span').click() #Clicl a Enviar
+driver.find_element(By.XPATH,'//*[@id="gb"]/div/div[1]/div/div[2]/a').click()
+driver.find_element(By.XPATH,'/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').click()   
+driver.find_element(By.XPATH,'/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys('imagen de perro')  
+time.sleep(5) 
+driver.find_element(By.XPATH,'/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(Keys.ENTER)
+ 
+
+
+#driver.find_element(By.XPATH,'/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys('Hola Fran!!!')
+#driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]/button/span').click() #Clicl a Enviar
+
+
 
 
 
